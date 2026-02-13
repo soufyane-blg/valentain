@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Alaa Valentine ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial;
+  background:linear-gradient(135deg,#ff6f91,#ff9671);
+}
+
+.card{
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{color:#ff4d6d;}
+
+button{
+  padding:12px 20px;
+  margin:10px;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.yes{background:#ff4d6d;color:white;}
+.no{background:#ccc;}
+.open{background:black;color:white;}
+
+#result,#notification,#messageBox{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background:rgba(0,0,0,0.9);
+  color:white;
+  text-align:center;
+}
+
+#result img{
+  width:300px;
+  border-radius:15px;
+  margin:15px;
+}
+
+.box{
+  background:white;
+  color:black;
+  padding:25px;
+  border-radius:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>Will you be my Valentine Ya Amiraty? ❤️</h1>
+
+<button class="yes" onclick="yesClicked()">YES 😍</button>
+<button class="no" id="noBtn">NO 🙈</button>
+</div>
+
+<div id="result">
+<h1>Warning: You just caused extreme happiness in my heart!!! ⚽❤️ </h1>
+
+
+
+<button onclick="showNotification()">Continue</button>
+</div>
+
+<div id="notification">
+<div class="box">
+<h2>📩 New message received</h2>
+<button class="open" onclick="openMessage()">Open</button>
+</div>
+</div>
+
+<div id="messageBox">
+<div class="box">
+<p id="loveText">
+    Alaa…
+
+    Since you came into my life, everything feels brighter.  
+    Your smile calms my heart, your voice makes my days lighter,  
+    and simply knowing you are here makes the world feel right.
+    
+    I want you beside me today, tomorrow, and in all the days to come —  
+    not because I need someone,  
+    but because my heart chose you ❤️
+    
+    With you, every moment becomes a memory I want to live again.
+
+                           
+                I love you soo much my princess ❤️
+</p>
+<button onclick="closeAll()">Close</button>
+</div>
+</div>
+
+<script>
+
+function yesClicked(){
+  document.getElementById("result").style.display="flex";
+}
+
+function showNotification(){
+  document.getElementById("result").style.display="none";
+  document.getElementById("notification").style.display="flex";
+}
+
+function openMessage(){
+  document.getElementById("notification").style.display="none";
+  document.getElementById("messageBox").style.display="flex";
+}
+
+function closeAll(){
+  document.getElementById("messageBox").style.display="none";
+}
+
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+  const maxX=window.innerWidth-120;
+  const maxY=window.innerHeight-80;
+  noBtn.style.position="fixed";
+  noBtn.style.left=Math.random()*maxX+"px";
+  noBtn.style.top=Math.random()*maxY+"px";
+});
+
+</script>
+
+</body>
+</html>
+                  
